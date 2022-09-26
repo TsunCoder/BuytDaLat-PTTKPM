@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,81 @@ namespace BusinessLayer
                     return ls.ToList();
                 }
                 return new List<BusRoute>();
+            }
+        }
+
+        public List<BusRoute> Select_By(string ColumnName, string Value)
+        {
+            using(var db = new ROUTE_MANAGEMENTEntities())
+            {
+                ColumnName = ColumnName.ToLower();
+                Value = Value.ToLower();
+                string sql = "Select * From BusRoutes Where CONVERT(nvarchar, " + ColumnName + ") = '" + Value + "'";
+                var ls = db.BusRoutes.SqlQuery(sql);
+                if (ls != null && ls.Any())
+                    return ls.ToList<BusRoute>();
+                return new List<BusRoute>();
+            }
+        }
+
+        public List<BusRoute> Select_By(string ColumnName, string Value, int PageSize, int PageIndex, out int TotalRows)
+        {
+            TotalRows = 0;
+            using (var db = new ROUTE_MANAGEMENTEntities())
+            {
+                ColumnName = ColumnName.ToLower();
+                Value = Value.ToLower();
+                string sql = "Select * From BusRoutes Where CONVERT(nvarchar," + ColumnName + ") = '" + Value + "'";
+                var ls = db.BusRoutes.SqlQuery(sql);
+                if (ls != null && ls.Any())
+                {
+                    TotalRows = ls.Count();
+                    return ls.OrderByDescending(s => s.BusRouteID).Skip(PageSize * PageIndex).Take(PageSize).ToList<BusRoute>();
+                }
+                return new List<BusRoute>();
+            }
+        }
+
+        public int InsertUpdate(BusRoute obj)
+        {
+            using (var db = new ROUTE_MANAGEMENTEntities())
+            {
+                using (var db1 = new ROUTE_MANAGEMENTEntities())
+                {
+                    var find = db.BusRoutes.FirstOrDefault(s => s.BusRouteID == obj.BusRouteID);
+                    if (find != null) db1.Entry(obj).State = EntityState.Modified;
+                    else obj = db1.BusRoutes.Add(obj);
+                    db1.SaveChanges();
+                    return obj.BusRouteID;
+                }
+            }
+        }
+
+        public void Delete(int id)
+        {
+            using (var db = new ROUTE_MANAGEMENTEntities())
+            {
+                var obj = db.BusRoutes.FirstOrDefault(s => s.BusRouteID == id);
+                if (obj != null)
+                {
+                    db.BusRoutes.Remove(obj);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public void Delete_IDs(List<string> IDs)
+        {
+            using (var db = new ROUTE_MANAGEMENTEntities())
+            {
+                var ls = db.BusRoutes.AsQueryable();
+                if (ls != null && ls.Any())
+                {
+                    ls = ls.Where(s => IDs.Contains(s.BusRouteID.ToString()));
+                    foreach (var item in ls)
+                        db.BusRoutes.Remove(item);
+                    db.SaveChanges();
+                }
             }
         }
     }
