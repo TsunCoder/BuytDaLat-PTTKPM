@@ -1,0 +1,3 @@
+D:\Workspace\phan-tich-va-thiet-ke-phan-mem\Project\BuytDaLat\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+D:\Workspace\phan-tich-va-thiet-ke-phan-mem\Project\BuytDaLat\BusinessLayer\obj\Debug\BusinessLayer.csproj.SuggestedBindingRedirects.cache
+D:\Workspace\phan-tich-va-thiet-ke-phan-mem\Project\BuytDaLat\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache

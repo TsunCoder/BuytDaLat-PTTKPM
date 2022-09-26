@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ROUTE_MANAGEMENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bus">
+    <Key>
+      <PropertyRef Name="BusID" />
+    </Key>
+    <Property Name="BusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LicensePlates" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BusNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SumSeats" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BusTypeID" Type="Int32" Nullable="false" />
+    <Property Name="RoutesID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BusRoute">
+    <Key>
+      <PropertyRef Name="BusRouteID" />
+    </Key>
+    <Property Name="BusRouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RouteNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RouteName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ResponsibleUnitID" Type="Int32" Nullable="false" />
+    <Property Name="OperationType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OperationTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fare" Type="Int32" Nullable="false" />
+    <Property Name="BusesAmount" Type="Int32" Nullable="false" />
+    <Property Name="BusesTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BusesSpace" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="BusStop">
+    <Key>
+      <PropertyRef Name="BusStopID" />
+    </Key>
+    <Property Name="BusStopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusStopName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BusStopDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Latitude" Type="Double" Nullable="false" />
+    <Property Name="Longitude" Type="Double" Nullable="false" />
+    <Property Name="Street" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Wards" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BusType">
+    <Key>
+      <PropertyRef Name="BusTypeID" />
+    </Key>
+    <Property Name="BusTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CarMaker" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Path" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DocumentTypeID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="DocumentTypeID" />
+    </Key>
+    <Property Name="DocumentTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="DriverID" />
+    </Key>
+    <Property Name="DriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IDCard" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sex" Type="Boolean" Nullable="false" />
+    <Property Name="DayOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HomeTown" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Driver_Bus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DriverID" Type="Int32" Nullable="false" />
+    <Property Name="BusID" Type="Int32" Nullable="false" />
+    <Property Name="DepartureDay" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="HandlingViolation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ResponsibleUnitID" Type="Int32" Nullable="false" />
+    <Property Name="ProcessingTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateSubmitted" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Link" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Icon" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mota" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeMenuID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="POST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayDang" Type="DateTime" Precision="3" />
+    <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="NumberOfReviews" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfResponse" Type="Int32" Nullable="false" />
+    <Property Name="CoverImage" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TypePostsID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reflect">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReflectTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VideoOrPicture" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReflectType">
+    <Key>
+      <PropertyRef Name="ReflectTypeID" />
+    </Key>
+    <Property Name="ReflectTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResponsibleUnit">
+    <Key>
+      <PropertyRef Name="ResponsibleUnitID" />
+    </Key>
+    <Property Name="ResponsibleUnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReponsibleUnitName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="RouteID" />
+    </Key>
+    <Property Name="RouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusRoutesID" Type="Int32" Nullable="false" />
+    <Property Name="StartPositionID" Type="Int32" Nullable="false" />
+    <Property Name="EndPositionID" Type="Int32" Nullable="false" />
+    <Property Name="RouteName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RouteAmount" Type="Int32" Nullable="false" />
+    <Property Name="RouteTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ApplicableDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OperationDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Route1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="NumberRoutes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Stop_Route">
+    <Key>
+      <PropertyRef Name="StopRouteID" />
+    </Key>
+    <Property Name="StopRouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="EndPositionID" Type="Int32" Nullable="false" />
+    <Property Name="Order" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypePost">
+    <Key>
+      <PropertyRef Name="TypePostsID" />
+    </Key>
+    <Property Name="TypePostsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ROUTE_MANAGEMENTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Buses" EntityType="Self.Bus" />
+    <EntitySet Name="BusRoutes" EntityType="Self.BusRoute" />
+    <EntitySet Name="BusStops" EntityType="Self.BusStop" />
+    <EntitySet Name="BusTypes" EntityType="Self.BusType" />
+    <EntitySet Name="Documents" EntityType="Self.Document" />
+    <EntitySet Name="DocumentTypes" EntityType="Self.DocumentType" />
+    <EntitySet Name="Drivers" EntityType="Self.Driver" />
+    <EntitySet Name="Driver_Bus" EntityType="Self.Driver_Bus" />
+    <EntitySet Name="HandlingViolations" EntityType="Self.HandlingViolation" />
+    <EntitySet Name="Information" EntityType="Self.Information" />
+    <EntitySet Name="MENUs" EntityType="Self.MENU" />
+    <EntitySet Name="POSTS" EntityType="Self.POST" />
+    <EntitySet Name="Reflects" EntityType="Self.Reflect" />
+    <EntitySet Name="ReflectTypes" EntityType="Self.ReflectType" />
+    <EntitySet Name="ResponsibleUnits" EntityType="Self.ResponsibleUnit" />
+    <EntitySet Name="Routes" EntityType="Self.Route" />
+    <EntitySet Name="Routes1" EntityType="Self.Route1" />
+    <EntitySet Name="Stop_Route" EntityType="Self.Stop_Route" />
+    <EntitySet Name="TypePosts" EntityType="Self.TypePost" />
+  </EntityContainer>
+</Schema>
