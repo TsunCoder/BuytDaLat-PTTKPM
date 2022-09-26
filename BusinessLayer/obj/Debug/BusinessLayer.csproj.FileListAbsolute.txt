@@ -10,3 +10,15 @@ D:\Workspace\phan-tich-va-thiet-ke-phan-mem\Project\BuytDaLat\BusinessLayer\bin\
 D:\Workspace\phan-tich-va-thiet-ke-phan-mem\Project\BuytDaLat\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 D:\Workspace\phan-tich-va-thiet-ke-phan-mem\Project\BuytDaLat\BusinessLayer\obj\Debug\BusinessLayer.dll
 D:\Workspace\phan-tich-va-thiet-ke-phan-mem\Project\BuytDaLat\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\1phhd\dlu\pttkpm\BuytDaLat-PTTKPM\BusinessLayer\obj\Debug\BusinessLayer.pdb
