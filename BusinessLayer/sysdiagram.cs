@@ -12,10 +12,12 @@ namespace BusinessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class ResponsibleUnit
+    public partial class sysdiagram
     {
-        public int ResponsibleUnitID { get; set; }
-        public string ReponsibleUnitName { get; set; }
-        public string PhoneNumber { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

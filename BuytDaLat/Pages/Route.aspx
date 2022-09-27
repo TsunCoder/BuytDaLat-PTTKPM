@@ -64,12 +64,12 @@
         <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
-                <asp:Panel CssClass="form-group" ID="pnTable" runat="server">
-                    <div class="table-responsive">
+                <asp:Panel ID="pnTable" runat="server">
+                    <div class="">
                         <table class="table table-bordered">
                             <label class="form-control">Danh sách tuyến</label>
                             <thead>
-                                <tr class="">
+                                <tr class="text-center text-nowrap">
                                     <th>
                                         <input id="selectAll" type="checkbox"><label for='selectAll'></label></th>
                                     <th>Edit</th>
@@ -84,21 +84,26 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <% 
+                                    foreach (var item in ls)
+                                    {
+                                %>
                                 <tr>
                                     <td style="width: 40px; text-align: center">
                                         <input name='cbID' type='checkbox' /></td>
                                     <td style="width: 50px">
-                                        <a style="text-align: center" class="btn btn-primary">Edit</a>
+                                        <a style="text-align: center" href="?idEdit=<%=item.BusRouteID %>" class="btn btn-primary">Edit</a>
                                     </td>
-                                    <td>Name</td>
-                                    <td>Name</td>
-                                    <td>Name</td>
-                                    <td>Name</td>
-                                    <td>Name</td>
-                                    <td>Name</td>
-                                    <td>Name</td>
-                                    <td>Name</td>
+                                    <td><%=item.RouteNumber %></td>
+                                    <td><%=item.RouteName %></td>
+                                    <td><%=item.OperationType %></td>
+                                    <td><%=item.OperationTime %></td>
+                                    <td><%=item.Fare %></td>
+                                    <td><%=item.BusesAmount %></td>
+                                    <td><%=item.BusesTime %></td>
+                                    <td><%=item.BusesSpace %></td>
                                 </tr>
+                                <% } %>
                             </tbody>
                         </table>
                     </div>

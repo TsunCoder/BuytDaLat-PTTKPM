@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2d17bf39c826455cae82fc1b1dcfa9f7" Name="Diagram1">
+      <Diagram DiagramId="1e4e56b3aab544bba9cff0ef47b91618" Name="Diagram1">
         <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.Bus" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.BusRoute" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.BusStop" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
@@ -23,7 +23,8 @@
         <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.Route" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.Route1" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.Stop_Route" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.TypePost" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.sysdiagram" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROUTE_MANAGEMENTModel.TypePost" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

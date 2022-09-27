@@ -43,6 +43,7 @@ namespace BusinessLayer
         public virtual DbSet<Route> Routes { get; set; }
         public virtual DbSet<Route1> Routes1 { get; set; }
         public virtual DbSet<Stop_Route> Stop_Route { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TypePost> TypePosts { get; set; }
     }
 }

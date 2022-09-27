@@ -17,12 +17,12 @@ namespace BusinessLayer
         public int BusRouteID { get; set; }
         public string RouteNumber { get; set; }
         public string RouteName { get; set; }
-        public int ResponsibleUnitID { get; set; }
+        public Nullable<int> ResponsibleUnitID { get; set; }
         public string OperationType { get; set; }
-        public System.DateTime OperationTime { get; set; }
-        public int Fare { get; set; }
-        public int BusesAmount { get; set; }
-        public System.DateTime BusesTime { get; set; }
-        public System.DateTime BusesSpace { get; set; }
+        public string OperationTime { get; set; }
+        public Nullable<int> Fare { get; set; }
+        public Nullable<int> BusesAmount { get; set; }
+        public string BusesTime { get; set; }
+        public string BusesSpace { get; set; }
     }
 }

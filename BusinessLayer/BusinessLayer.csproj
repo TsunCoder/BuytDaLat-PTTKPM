@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F9EE8453-79DC-4D3A-9A1A-9D7CCFCE9CE8}</ProjectGuid>
+    <ProjectGuid>{9667578D-E3C6-4E05-BC57-931B2581CCEA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>BusinessLayer</RootNamespace>
     <AssemblyName>BusinessLayer</AssemblyName>
@@ -69,7 +69,6 @@
     <Compile Include="BusType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Document.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -128,6 +127,9 @@
     <Compile Include="Stop_Route.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="System\BaseSystem.cs" />
     <Compile Include="System\BusRouteManagerSubsystem.cs" />
     <Compile Include="TypePost.cs">
@@ -146,10 +148,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -157,9 +162,5 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
