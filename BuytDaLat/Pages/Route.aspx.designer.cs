@@ -13,7 +13,6 @@ namespace BuytDaLat.Pages
 
     public partial class Route
     {
-
         /// <summary>
         /// form1 control.
         /// </summary>
