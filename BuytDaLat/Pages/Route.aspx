@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-group mb-2">
                     <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Thêm" />
-                    <asp:Button ID="btLuu" runat="server" Text="Lưu" CssClass="btn btn-primary" />
+                    <asp:Button ID="btLuu" runat="server" Text="Lưu" CssClass="btn btn-primary" OnClick="btLuu_Click" />
                     <asp:Button ID="btThoat" runat="server" Text="Thoát" CssClass="btn btn-primary" />
                 </div>
             </div>
