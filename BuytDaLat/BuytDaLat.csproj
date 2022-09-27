@@ -126,6 +126,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Pages\ResponsibleUnitManagement.aspx" />
+    <Content Include="Pages\RouteFinding.aspx" />
+    <Content Include="Pages\RoutePage.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -288,12 +290,26 @@
     <Compile Include="Pages\ResponsibleUnitManagement.aspx.designer.cs">
       <DependentUpon>ResponsibleUnitManagement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RouteFinding.aspx.cs">
+      <DependentUpon>RouteFinding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RouteFinding.aspx.designer.cs">
+      <DependentUpon>RouteFinding.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RouteManagement.aspx.cs">
       <DependentUpon>RouteManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\RouteManagement.aspx.designer.cs">
       <DependentUpon>RouteManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoutePage.aspx.cs">
+      <DependentUpon>RoutePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RoutePage.aspx.designer.cs">
+      <DependentUpon>RoutePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
