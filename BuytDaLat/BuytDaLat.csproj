@@ -125,6 +125,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\ResponsibleUnitManagement.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -149,7 +150,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Pages\Route.aspx" />
+    <Content Include="Pages\RouteManagement.aspx" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -280,12 +281,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Route.aspx.cs">
-      <DependentUpon>Route.aspx</DependentUpon>
+    <Compile Include="Pages\ResponsibleUnitManagement.aspx.cs">
+      <DependentUpon>ResponsibleUnitManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Route.aspx.designer.cs">
-      <DependentUpon>Route.aspx</DependentUpon>
+    <Compile Include="Pages\ResponsibleUnitManagement.aspx.designer.cs">
+      <DependentUpon>ResponsibleUnitManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RouteManagement.aspx.cs">
+      <DependentUpon>RouteManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RouteManagement.aspx.designer.cs">
+      <DependentUpon>RouteManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

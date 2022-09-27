@@ -116,5 +116,51 @@ namespace BusinessLayer
                 }
             }
         }
+
+        public List<BusRoute> Find_KeyWord(string Keyword, int PageSize, int PageIndex, out int TotalRows)
+        {
+            TotalRows = 0;
+            using (var db = new ROUTE_MANAGEMENTEntities())
+            {
+                if (!string.IsNullOrWhiteSpace(Keyword))
+                {
+                    var obj = db.BusRoutes.FirstOrDefault(s => s.BusRouteID.ToString().CompareTo(Keyword) == 0);
+                    if (obj != null)
+                    {
+                        List<BusRoute> ls = new List<BusRoute>();
+                        ls.Add(obj);
+                        TotalRows = 1;
+                        return ls;
+                    }
+                    var list = db.BusRoutes.AsQueryable();
+                    list = list.Where(s => s.BusRouteID.ToString().Contains(Keyword)
+                    || s.RouteName.ToLower().Contains(Keyword)
+                    || s.RouteNumber.ToLower().Contains(Keyword)
+                    || s.ResponsibleUnitID.ToString().Contains(Keyword)
+                    || s.OperationType.ToString().Contains(Keyword)
+                    || s.OperationTime.ToString().Contains(Keyword)
+                    || s.Fare.ToString().Contains(Keyword)
+                    || s.BusesAmount.ToString().Contains(Keyword)
+                    || s.BusesTime.ToString().Contains(Keyword)
+                    || s.BusesSpace.ToString().Contains(Keyword)
+                    );
+                    if (list != null && list.Any())
+                    {
+                        TotalRows = list.Count();
+                        return list.OrderByDescending(s => s.BusRouteID).Skip(PageSize * PageIndex).Take(PageSize).ToList();
+                    }
+                }
+                else
+                {
+                    var list = db.BusRoutes.AsQueryable();
+                    if (list != null && list.Any())
+                    {
+                        TotalRows = list.Count();
+                        return list.OrderByDescending(s => s.BusRouteID).Skip(PageSize * PageIndex).Take(PageSize).ToList();
+                    }
+                }
+                return new List<BusRoute>();
+            }
+        }
     }
 }
