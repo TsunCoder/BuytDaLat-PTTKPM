@@ -114,12 +114,12 @@ namespace BuytDaLat.Pages
         protected global::System.Web.UI.WebControls.Panel pnTable;
 
         /// <summary>
-        /// Buttonxoa control.
+        /// btnXoa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Buttonxoa;
+        protected global::System.Web.UI.WebControls.Button btnXoa;
     }
 }

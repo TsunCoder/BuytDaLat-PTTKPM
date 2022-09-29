@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BuytDaLat.Pages
 {
@@ -64,10 +65,15 @@ namespace BuytDaLat.Pages
             BusRouteManagerSubsystem.Instance.responsibleUnitFuncs.InsertUpdate(obj);
         }
 
-        protected void Buttonxoa_Click1(object sender, EventArgs e)
+        protected void btnXoa_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(this.txtID.ToString());
-            BusRouteManagerSubsystem.Instance.responsibleUnitFuncs.Delete(id);
+            string selected = Request.Form["cbID"];
+            if (selected != null && selected.Trim().Length > 0)
+            {
+                List<string> list = selected.Split(',').ToList();
+                BusRouteManagerSubsystem.Instance.responsibleUnitFuncs.Delete_IDs(list);
+            }
+
         }
     }
 }

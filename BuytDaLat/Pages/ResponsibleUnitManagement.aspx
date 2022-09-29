@@ -42,6 +42,8 @@
                                         <caption>
                                             <label class="form-control text-center font-weight-bolder">
                                             Danh sách</label>
+
+                                            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn btn-primary" OnClick="btnXoa_Click" />
                                             <thead>
                                                 <tr class="text-center text-nowrap">
                                                     <th>
@@ -50,7 +52,6 @@
                                                     <th>ID</th>
                                                     <th>Tên đơn vị đảm nhận</th>
                                                     <th>Số điện thoại</th>
-                                                    <th>Xóa</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -60,13 +61,12 @@
                                             %>
                                                 <tr>
                                                     <td style="width: 40px; text-align: center">
-                                                        <input name='cbID' type='checkbox' />
+                                                        <input name='cbID' type='checkbox' value='<%= item.ResponsibleUnitID %>' />
                                                     </td>
                                                     <td style="width: 50px"><a class="btn btn-primary" href="?idedit=<%=item.ResponsibleUnitID %>" style="text-align: center">Edit</a> </td>
                                                     <td><%=item.ResponsibleUnitID %></td>
                                                     <td><%=item.ReponsibleUnitName %></td>
                                                     <td><%=item.PhoneNumber %></td>
-                                                    <td><asp:Button CssClass="btn btn-primary" ID="Buttonxoa" runat="server" Text="Xoa" OnClick="Buttonxoa_Click1"/></td>
                                                 </tr>
                                                 <% } %>
                                             </tbody>
