@@ -1,9 +1,12 @@
-﻿
-* {
+﻿* {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
+}
+
+div {
+    display: block;
 }
 
 Body {
@@ -11,44 +14,45 @@ Body {
     font-size: 12px;
     color: #2f2f2f;
     line-height: 1.3;
-    background-color:cadetblue;
+    background-color: cadetblue;
 }
 
-.main-container{
+.main-container {
     margin: 10px auto;
 }
 
-
-.NewsTwoMain .header {
-    padding-top: 15px;
-    display: flex;
-    white-space: nowrap;
-}
-
-.login-language-social-container{
-    margin-right: 20px;
-}
-
-.language-selected {
-    font-weight: 600;
+.dnnFormItem div.input input[type="text"], .dnnFormItem div.input select {
+    width: 350px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px gray solid;
+    padding: 0rem;
+    text-indent: 10px;
 }
 
 
-.portalName {
-    color: #109D59;
-    font-size: 18px;
-    padding-left: 10px;
-    display: inline-block;
-    white-space: normal;
-    font-weight: bold;
-    text-transform: uppercase;
+.dnnFormItem input[type="text"], .dnnFormItem input[type="password"], .dnnFormItem input[type="email"], .dnnFormItem input[type="tel"], .dnnFormItem select, .dnnFormItem textarea {
+    width: 45%;
+    max-width: 445px;
+}
+
+.dnnFormItem {
     text-align: center;
-    vertical-align: middle;
 }
 
-.eds_containers_NewsTwo.eds_templateGroup_default {
-    border: 1px solid #dadada;
+    .dnnFormItem .cms-button-small {
+        margin-right: 10px !important;
+        margin-top: 0px !important;
+    }
+
+    .dnnFormItem div {
+        vertical-align: top;
+        display: inline-block;
+    }
+
+.eds_containers_NewsTwo.eds_templateGroup_default.eds_template_Default {
     background-color: #F1F1F1;
+    border: 1px solid #dadada;
 }
 
     .eds_containers_NewsTwo.eds_templateGroup_default > h2 {
@@ -59,6 +63,7 @@ Body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 18px;
             color: #121212;
+            margin-left: 20px;
         }
 
             .eds_containers_NewsTwo.eds_templateGroup_default > h2 span.Head > span.highlight {
@@ -69,17 +74,11 @@ Body {
     padding-right: 20px;
 }
 
-.NewsTwoMain input[type="text"] {
-    border: 1px solid #aaa;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+.header {
+    padding-top: 15px;
+    display: flex;
+    white-space: nowrap;
 }
-
-.NewsTwoMain a {
-    color: #5e9700;
-    text-decoration: none;
-}
-
 
 .dnnFormItem input[type="text"] {
     width: 45%;
@@ -100,36 +99,8 @@ Body {
     padding: 8px;
 }
 
-.cms-button table .icon {
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    height: 30px;
-    min-width: 30px;
-    line-height: 30px;
-    margin: 0px;
-    padding: 1px;
-    vertical-align: middle;
-    color: #34B67A;
-    background-color: #ffffff;
-    border: solid 1px #dadada;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    margin-right: 5px;
-}
-
-td {
-    display: table-cell;
-    vertical-align: inherit;
-}
-
-table {
-    border-collapse: separate;
-    text-indent: initial;
-    border-spacing: 2px;
+.login-language-social-container {
+    margin-right: 20px
 }
 
 .cms-button {
@@ -148,4 +119,25 @@ table {
 
 span.highlight {
     color: #34B67A;
+}
+
+.portalName {
+    color: #109D59;
+    font-size: 18px;
+    padding-left: 10px;
+    display: inline-block;
+    white-space: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.language-selected {
+    font-weight: 600;
+}
+
+.language {
+    margin-top: 2px;
+    margin-right: 4px;
 }

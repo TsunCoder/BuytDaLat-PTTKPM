@@ -24,6 +24,15 @@ namespace BuytDaLat.Pages
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// btnOpenFormAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOpenFormAdd;
+
+        /// <summary>
         /// Panel1 control.
         /// </summary>
         /// <remarks>
@@ -123,15 +132,6 @@ namespace BuytDaLat.Pages
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtBusesSpace;
 
         /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
         /// btLuu control.
         /// </summary>
         /// <remarks>
@@ -141,13 +141,13 @@ namespace BuytDaLat.Pages
         protected global::System.Web.UI.WebControls.Button btLuu;
 
         /// <summary>
-        /// btThoat control.
+        /// btnCancelFormAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btThoat;
+        protected global::System.Web.UI.WebControls.Button btnCancelFormAdd;
 
         /// <summary>
         /// ScriptManager2 control.

@@ -29,7 +29,6 @@ namespace BuytDaLat.Pages
         private void LoadBusRoute()
         {
             ls = BusRouteManagerSubsystem.Instance.busRouteFuns.Select_All();
-            this.DataBind();
         }
 
         private void LoadResponsibleUnit()
@@ -64,11 +63,6 @@ namespace BuytDaLat.Pages
             Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
-        protected void btThoat_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btXoa_Click(object sender, EventArgs e)
         {
             string selected = Request.Form["cbID"];
@@ -77,6 +71,7 @@ namespace BuytDaLat.Pages
                 List<string> list = selected.Split(',').ToList();
                 BusRouteManagerSubsystem.Instance.busRouteFuns.Delete_IDs(list);
             }
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         protected void drlPageNumber_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,8 +114,8 @@ namespace BuytDaLat.Pages
                 int count = TotalRows / PageSize;
                 if (TotalRows % PageSize > 0)
                     count++;
-                if (count > 20)
-                    count = 20;
+                if (count > 7)
+                    count = 7;
                 this.pnButton.Controls.Clear();
                 for (int i = 0; i < count; i++)
                 {
@@ -131,7 +126,7 @@ namespace BuytDaLat.Pages
                     };
                     bt.Attributes.Add("runat", "server");
                     bt.Click += new EventHandler(this.btPhanTrang_Click);
-                    bt.CssClass = "btn btn-dark";
+                    bt.CssClass = "btn btn-dark ml-2";
                     this.pnButton.Controls.Add(bt);
 
                 }
@@ -193,6 +188,18 @@ namespace BuytDaLat.Pages
         {
             BusRoute obj = this.GetValue();
             BusRouteManagerSubsystem.Instance.busRouteFuns.InsertUpdate(obj);
+        }
+
+        protected void btnOpenFormAdd_Click1(object sender, EventArgs e)
+        {
+            this.Panel1.Visible = true;
+            this.btnOpenFormAdd.Visible = false;
+        }
+
+        protected void btnCancelFormAdd_Click(object sender, EventArgs e)
+        {
+            this.Panel1.Visible = false;
+            this.btnOpenFormAdd.Visible = true;
         }
     }
 }

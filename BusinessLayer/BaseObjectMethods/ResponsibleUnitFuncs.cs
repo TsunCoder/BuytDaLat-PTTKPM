@@ -111,5 +111,44 @@ namespace BusinessLayer
                 }
             }
         }
+
+        public List<ResponsibleUnit> Find_KeyWord(string Keyword, int PageSize, int PageIndex, out int TotalRows)
+        {
+            TotalRows = 0;
+            using (var db = new ROUTE_MANAGEMENTEntities())
+            {
+                if (!string.IsNullOrWhiteSpace(Keyword))
+                {
+                    var obj = db.ResponsibleUnits.FirstOrDefault(s => s.ResponsibleUnitID.ToString().CompareTo(Keyword) == 0);
+                    if (obj != null)
+                    {
+                        List<ResponsibleUnit> ls = new List<ResponsibleUnit>();
+                        ls.Add(obj);
+                        TotalRows = 1;
+                        return ls;
+                    }
+                    var list = db.ResponsibleUnits.AsQueryable();
+                    list = list.Where(s => s.ResponsibleUnitID.ToString().Contains(Keyword)
+                    || s.ReponsibleUnitName.ToLower().Contains(Keyword)
+                    || s.PhoneNumber.ToLower().Contains(Keyword)
+                    );
+                    if (list != null && list.Any())
+                    {
+                        TotalRows = list.Count();
+                        return list.OrderByDescending(s => s.ResponsibleUnitID).Skip(PageSize * PageIndex).Take(PageSize).ToList();
+                    }
+                }
+                else
+                {
+                    var list = db.ResponsibleUnits.AsQueryable();
+                    if (list != null && list.Any())
+                    {
+                        TotalRows = list.Count();
+                        return list.OrderByDescending(s => s.ResponsibleUnitID).Skip(PageSize * PageIndex).Take(PageSize).ToList();
+                    }
+                }
+                return new List<ResponsibleUnit>();
+            }
+        }
     }
 }
