@@ -74,7 +74,7 @@
             </div>
             <div class=" w-auto" style="border: 1px gainsboro solid; padding: 0.2rem; margin-top: 30px">
                 <div style="text-align: center; background-color: gainsboro; padding: 1rem">
-                    <span>Bản quyền Trung tâm Quản lý Giao thông công cộng Thành phố Hồ Chí Minh </span>
+                    <span>Bản quyền Trung tâm Quản lý Giao thông công cộng Thành phố Đà Lạt </span>
                     <br />
                     <span>Phát triển bởi </span>
                     <span class="highlight">Công ty Hệ thống thông tin DLU</span>

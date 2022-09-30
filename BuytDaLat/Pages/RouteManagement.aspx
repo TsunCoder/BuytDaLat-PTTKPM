@@ -3,12 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="../CSS/RouteMgmt.css" rel="stylesheet" type="text/css" />
     <form class="form1" id="form1" runat="server">
-        <h1 class="mt-4 text-light" style="font-family:monospace; font-weight:800">Quản lý tuyến</h1>
-        <asp:Button ID="btnOpenFormAdd" runat="server" Text="Thêm tuyến mới" CssClass="btn_AddNewRoute px-4 py-2" OnClick="btnOpenFormAdd_Click1" />
+        <h1 class="text-light border-0" style="font-family:monospace; font-weight:800; font-size:32px">
+            Quản lý tuyến
+        </h1>
+        <asp:Button ID="btnOpenFormAdd" runat="server" Text="Thêm tuyến mới" CssClass="btn_AddNewRoute p-2" OnClick="btnOpenFormAdd_Click1" />
         <div class="formAdd bg-light">
             <asp:Panel CssClass="panel1 mt-3 p-4" ID="Panel1" runat="server" Visible="false">
-                <label class="form-control" style="background-color:#DADADADA; font-weight:600">
-                                    Thêm tuyến</label>
+                <label class="form-control" style="background-color:#DADADADA; font-weight:600">Thêm tuyến</label>
                 <div class="form-group border">
                     
                     <div class="row mt-4 px-4">
