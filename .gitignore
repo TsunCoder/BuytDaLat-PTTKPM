@@ -2,3 +2,6 @@ packages/
 .vs/
 **/obj/
 **/Web.config
+**/App.config
+BusinessLayer/bin/Debug/
+BuytDaLat/bin/

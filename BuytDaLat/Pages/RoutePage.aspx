@@ -50,7 +50,7 @@
                                             <% foreach (var item in route)
 
                                                 { %>
-                                            <a href="RouteDetail.aspx/?id=<%=item.BusRouteID %>" class="cms-button">
+                                            <a href="/Pages/RouteDetail?id=<%= item.BusRouteID %>" class="cms-button">
                                                 <table>
                                                     <tbody>
                                                         <tr>
