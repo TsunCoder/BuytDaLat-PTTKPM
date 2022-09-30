@@ -70,7 +70,7 @@
                                 Danh sách tuyến</label>
                             <div class="mt-2 mb-2 row d-flex ">
                                 <div class="col">
-                                    <input id="txtKeyword" runat="server" class="form-control" placeholder="Tìm kiếm" type="text"> </input>
+                                    <input id="txtKeyword" runat="server" class="form-control" placeholder="Tìm kiếm" type="text"/>
                                 </div>
                                 <div class="col w-150" style="width: 100px">
                                     <asp:DropDownList ID="drlPageNumber" runat="server" AutoPostBack="true" CssClass="custom-select" OnSelectedIndexChanged="drlPageNumber_SelectedIndexChanged">

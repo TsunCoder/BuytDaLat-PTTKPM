@@ -20,7 +20,6 @@ namespace BuytDaLat.Pages
                 this.drlPageNumber.Text = Global.g_PageSize;
                 this.LoadTimKiem(0);
                 this.LoadResponsibleUnit();
-
                 this.LoadEditButton();
             }
             this.LoadBusRoute();
@@ -31,6 +30,7 @@ namespace BuytDaLat.Pages
         private void LoadBusRoute()
         {
             ls = BusRouteManagerSubsystem.Instance.busRouteFuns.Select_All();
+            this.DataBind();
         }
 
         private void LoadResponsibleUnit()
@@ -62,6 +62,7 @@ namespace BuytDaLat.Pages
         {
             BusRoute obj = this.GetValue();
             BusRouteManagerSubsystem.Instance.busRouteFuns.InsertUpdate(obj);
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         protected void btThoat_Click(object sender, EventArgs e)
@@ -175,7 +176,7 @@ namespace BuytDaLat.Pages
             {
                 this.pnTable.Visible = false;
                 this.pnPhanTrang.Visible = false;
-                this.Label1.Text = "Không tìm thấy dữ liệu.";
+    
             }
         }
 
