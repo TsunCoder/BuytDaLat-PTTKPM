@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace BuytDaLat.Pages
 {
@@ -13,6 +10,7 @@ namespace BuytDaLat.Pages
         public List<ResponsibleUnit> ls = new List<ResponsibleUnit>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            LoadEdit();
             LoadResposible();
         }
 
@@ -35,6 +33,47 @@ namespace BuytDaLat.Pages
         {
             ResponsibleUnit obj = this.GetValue();
             BusRouteManagerSubsystem.Instance.responsibleUnitFuncs.InsertUpdate(obj);
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ResponsibleUnit obj = this.GetValue();
+            BusRouteManagerSubsystem.Instance.responsibleUnitFuncs.InsertUpdate(obj);
+
+        }
+
+        private void LoadEdit()
+        {
+            try
+            {
+                int idEdit = int.Parse(Request.QueryString["idedit"]);
+                ResponsibleUnit obj = BusRouteManagerSubsystem.Instance.responsibleUnitFuncs.Select_ID(idEdit);
+                if (obj != null)
+                {
+                    this.txtPhoneNumber.Value = obj.PhoneNumber;
+                    this.txtID.Value = obj.ResponsibleUnitID.ToString();
+                    this.txtResbonsilbeName.Value = obj.ReponsibleUnitName;
+                }
+            }
+            catch { }
+        }
+
+        protected void btLuu_Click1(object sender, EventArgs e)
+        {
+
+            ResponsibleUnit obj = this.GetValue();
+            BusRouteManagerSubsystem.Instance.responsibleUnitFuncs.InsertUpdate(obj);
+        }
+
+        protected void btnXoa_Click(object sender, EventArgs e)
+        {
+            string selected = Request.Form["cbID"];
+            if (selected != null && selected.Trim().Length > 0)
+            {
+                List<string> list = selected.Split(',').ToList();
+                BusRouteManagerSubsystem.Instance.responsibleUnitFuncs.Delete_IDs(list);
+            }
+
         }
     }
 }

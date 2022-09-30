@@ -13,6 +13,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <header class="d-flex flex-row">
+        <a class="mr-3" href="/Pages/RouteManagement" runat="server">Route</a>
+        <a class="mr-3" href="/Pages/ResponsibleUnitManagement.aspx" runat="server">Don vi dam nhan</a>
+<a class="mr-3" href="Pages/RouteFinding" runat="server">RouteFinding</a>
+<a class="mr-3" href="Pages/RoutePage" runat="server">RoutePage</a>
+    </header>
      <div class="container body-content">
            <asp:ContentPlaceHolder ID="MainContent" runat="server">
            </asp:ContentPlaceHolder>

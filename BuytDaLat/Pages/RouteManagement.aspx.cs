@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -188,6 +187,12 @@ namespace BuytDaLat.Pages
             this.hPageIndex.Value = "0";
             this.LoadTimKiem(0);
             this.LoadPhanTrang();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            BusRoute obj = this.GetValue();
+            BusRouteManagerSubsystem.Instance.busRouteFuns.InsertUpdate(obj);
         }
     }
 }

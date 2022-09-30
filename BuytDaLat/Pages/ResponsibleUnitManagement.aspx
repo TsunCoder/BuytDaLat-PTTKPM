@@ -25,8 +25,8 @@
                     </div>
                     <div class="row mt-2 ml-0">
                         <div class="form-group mt-2">
-                            <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Thêm" />
-                            <asp:Button ID="btLuu" runat="server" Text="Lưu" CssClass="btn btn-primary" />
+                            <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Thêm" OnClick="Button1_Click" />
+                            <asp:Button ID="btLuu" runat="server" Text="Lưu" CssClass="btn btn-primary" OnClick="btLuu_Click1" />
                             <asp:Button ID="btThoat" runat="server" Text="Thoát" CssClass="btn btn-primary" />
                         </div>
                     </div>
@@ -39,34 +39,38 @@
                             <asp:Panel ID="pnTable" runat="server">
                                 <div class="">
                                     <table class="table table-bordered">
-                                        <label class="form-control text-center font-weight-bolder">Danh sách</label>
-                                        <thead>
-                                            <tr class="text-center text-nowrap">
-                                                <th>
-                                                    <input id="selectAll" type="checkbox"><label for='selectAll'></label></th>
-                                                <th>Edit</th>
-                                                <th>ID</th>
-                                                <th>Tên đơn vị đảm nhận</th>
-                                                <th>Số điện thoại</th>
-                                            </tr>
-                                        </thead>
-                                         <tbody>
-                                            <% 
+                                        <caption>
+                                            <label class="form-control text-center font-weight-bolder">
+                                            Danh sách</label>
+
+                                            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn btn-primary" OnClick="btnXoa_Click" />
+                                            <thead>
+                                                <tr class="text-center text-nowrap">
+                                                    <th>
+                                                        <input id="selectAll" type="checkbox"><label for="selectAll"></label></input></th>
+                                                    <th>Edit</th>
+                                                    <th>ID</th>
+                                                    <th>Tên đơn vị đảm nhận</th>
+                                                    <th>Số điện thoại</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% 
                                                 foreach (var item in ls)
                                                 {
                                             %>
-                                            <tr>
-                                                <td style="width: 40px; text-align: center">
-                                                    <input name='cbID' type='checkbox' /></td>
-                                                <td style="width: 50px">
-                                                    <a style="text-align: center" href="?idEdit=<%=item.ResponsibleUnitID %>" class="btn btn-primary">Edit</a>
-                                                </td>
-                                                <td><%=item.ResponsibleUnitID %></td>
-                                                <td><%=item.ReponsibleUnitName %></td>
-                                                <td><%=item.PhoneNumber %></td>
-                                            </tr>
-                                            <% } %>
-                                        </tbody>
+                                                <tr>
+                                                    <td style="width: 40px; text-align: center">
+                                                        <input name='cbID' type='checkbox' value='<%= item.ResponsibleUnitID %>' />
+                                                    </td>
+                                                    <td style="width: 50px"><a class="btn btn-primary" href="?idedit=<%=item.ResponsibleUnitID %>" style="text-align: center">Edit</a> </td>
+                                                    <td><%=item.ResponsibleUnitID %></td>
+                                                    <td><%=item.ReponsibleUnitName %></td>
+                                                    <td><%=item.PhoneNumber %></td>
+                                                </tr>
+                                                <% } %>
+                                            </tbody>
+                                        </caption>
                                     </table>
                                 </div>
                                 </div>
